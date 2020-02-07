@@ -10,3 +10,5 @@ Basic features are:
 - In app purchase to remove ads from app
 
 So far that's all. I will improve by the time.
+
+But wait, nothing here yet. It's coming soon...
