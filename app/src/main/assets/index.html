@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Test Page</title>
+		<style>
+			button{
+				margin: 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<p>Hello world!</p>
+
+		<p>Banner</p>
+		<button onclick="showBanner()">Show Banner</button>
+		<button onclick="hideBanner()">Hide Banner</button>
+
+		<p>Interstitial</p>
+		<button onclick="showInterstitial()">Show Interstitial</button>
+
+		<p>Screen Orientation</p>
+		<button onclick="landscape()">Landscape</button>
+		<button onclick="portrait()">Portrait</button>
+
+		<script>
+			function showBanner(){
+				try{
+					Android.showAndroidBanner()
+				}catch(e){
+					console.log(e)
+				}
+			}
+
+			function hideBanner(){
+				try{
+					Android.hideAndroidBanner()
+				}catch(e){
+					console.log(e)
+				}
+			}
+
+			function landscape(){
+				try{
+					Android.landscape()
+				}catch(e){
+					console.log(e)
+				}
+			}
+
+			function portrait(){
+				try{
+					Android.portrait()
+				}catch(e){
+					console.log(e)
+				}
+			}
+
+			function showInterstitial(){
+				try{
+					Android.showAd()
+				}catch(e){
+					console.log(e)
+				}
+			}
+		</script>
+	</body>
+</html>
