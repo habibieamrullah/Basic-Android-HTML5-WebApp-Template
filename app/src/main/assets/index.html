@@ -9,7 +9,7 @@
 		</style>
 	</head>
 	<body>
-		<p>Hello world!</p>
+		<h1>Hello world!</h1>
 
 		<p>Banner</p>
 		<button onclick="showBanner()">Show Banner</button>
@@ -22,46 +22,6 @@
 		<button onclick="landscape()">Landscape</button>
 		<button onclick="portrait()">Portrait</button>
 
-		<script>
-			function showBanner(){
-				try{
-					Android.showAndroidBanner()
-				}catch(e){
-					console.log(e)
-				}
-			}
-
-			function hideBanner(){
-				try{
-					Android.hideAndroidBanner()
-				}catch(e){
-					console.log(e)
-				}
-			}
-
-			function landscape(){
-				try{
-					Android.landscape()
-				}catch(e){
-					console.log(e)
-				}
-			}
-
-			function portrait(){
-				try{
-					Android.portrait()
-				}catch(e){
-					console.log(e)
-				}
-			}
-
-			function showInterstitial(){
-				try{
-					Android.showAd()
-				}catch(e){
-					console.log(e)
-				}
-			}
-		</script>
+		<script src="awebapp.js"></script>
 	</body>
 </html>
