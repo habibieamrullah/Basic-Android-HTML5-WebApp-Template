@@ -3,8 +3,21 @@
 	<head>
 		<title>Test Page</title>
 		<style>
+			body{
+				background-color: #383838;
+				color: #d9d9d9;
+				font-family: arial;
+			}
 			button{
-				margin: 20px;
+				margin: 10px;
+				border: none;
+				padding: 20px;
+				border-radius: 10px;
+				cursor: pointer;
+			}
+
+			button:hover{
+				background-color: white;
 			}
 		</style>
 	</head>
@@ -12,15 +25,34 @@
 		<h1>Hello world!</h1>
 
 		<p>Banner</p>
-		<button onclick="showBanner()">Show Banner</button>
-		<button onclick="hideBanner()">Hide Banner</button>
+		<button onclick="awebapp.showBanner()">Show Banner</button>
+		<button onclick="awebapp.hideBanner()">Hide Banner</button>
 
 		<p>Interstitial</p>
-		<button onclick="showInterstitial()">Show Interstitial</button>
+		<button onclick="awebapp.showInterstitial()">Show Interstitial</button>
+
+		<p>Rewarded Ad</p>
+		<p>Current rewards: <span id="currentrewards">Not Rewarded</span></p>
+		<button onclick="awebapp.showRewardedAd()">Show Rewarded Ad</button>
 
 		<p>Screen Orientation</p>
-		<button onclick="landscape()">Landscape</button>
-		<button onclick="portrait()">Portrait</button>
+		<button onclick="awebapp.landscape()">Landscape</button>
+		<button onclick="awebapp.portrait()">Portrait</button>
+
+		<p>Say hello on toast alert</p>
+		<button onclick="awebapp.alert('Hello!')">Say Hello</button>
+
+		<p>Share a text "Hello Android WebApp"</p>
+		<button onclick="awebapp.shareText('Hello Android WebApp', 'Your message title')">Share a text...</button>
+
+		<p>Share this app (the download link of this app)</p>
+		<button onclick="awebapp.shareThisApp('Hi, this app is cool, get it from this link below:', 'Another cool app')">Share this app</button>
+
+		<p>Open Google Play and rate this app</p>
+		<button onclick="awebapp.rateThisApp()">Rate This App</button>
+
+		<p>Purchase Remove Ads Feature</p>
+		<button onclick="awebapp.removeAds()">Purchase Remove Ads Feature</button>
 
 		<script src="awebapp.js"></script>
 	</body>
