@@ -1,6 +1,8 @@
 # Basic-Android-HTML5-WebApp-Template
 Basic Android HTML5 WebApp template that you can start with and improve as you like.
 
+Watch the demo video here: https://www.youtube.com/watch?v=GtfUjYKr2Ys
+
 It works like a bridge between JavaScript and Android WITHOUT Cordova or Phonegap. You can trigger some of native Android functions from JavaScript, such as:
 
 - Showing AdMob Banner Ad
