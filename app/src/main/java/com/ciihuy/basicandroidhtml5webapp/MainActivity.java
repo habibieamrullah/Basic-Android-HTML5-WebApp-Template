@@ -200,7 +200,7 @@ public class MainActivity extends AppCompatActivity implements BillingProcessor.
         bp = new BillingProcessor(MainActivity.this, "your licensekey from Google Play Devoloper Console", this);
         bp.initialize();
 
-        sharedpreferences = getApplicationContext().getSharedPreferences(BuildConfig.APPLICATION_ID, MODE_PRIVATE);
+        sharedpreferences = getApplicationContext().getSharedPreferences(getPackageName(), MODE_PRIVATE);
         if(sharedpreferences.contains("ispro")) {
             ispro = sharedpreferences.getBoolean("ispro", false);
         }
@@ -335,7 +335,7 @@ public class MainActivity extends AppCompatActivity implements BillingProcessor.
             shareIntent.setType("text/plain");
             shareIntent.putExtra(Intent.EXTRA_SUBJECT, titlemsg);
             String shareMessage = msg+"\n\n";
-            shareMessage = shareMessage + "https://play.google.com/store/apps/details?id=" + BuildConfig.APPLICATION_ID +"\n\n";
+            shareMessage = shareMessage + "https://play.google.com/store/apps/details?id=" + getPackageName() +"\n\n";
             shareIntent.putExtra(Intent.EXTRA_TEXT, shareMessage);
             startActivity(Intent.createChooser(shareIntent, "Choose one"));
         } catch(Exception e) {
