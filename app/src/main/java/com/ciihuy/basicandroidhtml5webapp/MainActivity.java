@@ -195,7 +195,7 @@ public class MainActivity extends AppCompatActivity implements BillingProcessor.
         bp = new BillingProcessor(MainActivity.this, "your licensekey from Google Play Devoloper Console", this);
         bp.initialize();
 
-        sharedpreferences = getApplicationContext().getSharedPreferences("sharedprefttssjawa", MODE_PRIVATE);
+        sharedpreferences = getApplicationContext().getSharedPreferences(BuildConfig.APPLICATION_ID, MODE_PRIVATE);
         if(sharedpreferences.contains("ispro")) {
             ispro = sharedpreferences.getBoolean("ispro", false);
         }
