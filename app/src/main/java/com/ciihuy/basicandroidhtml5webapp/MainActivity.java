@@ -14,6 +14,7 @@ import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.KeyEvent;
 import android.view.View;
 import android.webkit.JavascriptInterface;
 import android.webkit.WebChromeClient;
@@ -93,6 +94,7 @@ public class MainActivity extends AppCompatActivity implements BillingProcessor.
             @Override
             public void onPageFinished(WebView view, String url){
                 progress.dismiss();
+                browser.setVisibility(View.VISIBLE);
                 if(ispro){
                     browser.loadUrl("javascript:awebapp.itspro(1)");
                 }
@@ -104,6 +106,7 @@ public class MainActivity extends AppCompatActivity implements BillingProcessor.
                 progress = ProgressDialog.show(MainActivity.this, null, "Please wait...", true);
                 progress.setCanceledOnTouchOutside(false);
             }
+
         });
 
         //Mobile Ads Init
@@ -122,8 +125,9 @@ public class MainActivity extends AppCompatActivity implements BillingProcessor.
             }
 
             @Override
-            public void onAdFailedToLoad(int errorCode) {
+            public void onAdFailedToLoad(LoadAdError adError) {
                 // Code to be executed when an ad request fails.
+                browser.loadUrl("file:///android_asset/error.html");
             }
 
             @Override
@@ -159,8 +163,9 @@ public class MainActivity extends AppCompatActivity implements BillingProcessor.
             }
 
             @Override
-            public void onAdFailedToLoad(int errorCode) {
+            public void onAdFailedToLoad(LoadAdError adError) {
                 // Code to be executed when an ad request fails.
+                browser.loadUrl("file:///android_asset/error.html");
             }
 
             @Override
@@ -494,6 +499,24 @@ public class MainActivity extends AppCompatActivity implements BillingProcessor.
     @Override
     public void onResume(){
         super.onResume();
+    }
+
+    //For webview...
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        WebView browser = findViewById(R.id.webView);
+        if ((keyCode == KeyEvent.KEYCODE_BACK) && browser.canGoBack()) {
+            //if Back key pressed and webview can navigate to previous page
+            browser.goBack();
+            // go back to previous page
+            return true;
+        }
+        else
+        {
+            //finish();
+            // finish the activity
+        }
+        return super.onKeyDown(keyCode, event);
     }
 
 
