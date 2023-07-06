@@ -53,9 +53,11 @@ public class MainActivity extends AppCompatActivity {
         browser.addJavascriptInterface(new WebAppInterface(this), "Android");
         browser.loadUrl("file:///android_asset/index.html");
         browser.setWebViewClient(new WebViewClient() {
+            /*
             public boolean shouldOverrideUrlLoading(WebView viewx, String urlx) {
-                browser.setVisibility(View.GONE);
-                if(urlx.contains("domain.com")){
+                //browser.setVisibility(View.GONE);
+
+                if(urlx.contains("pustakasyiah.icc")){
                     viewx.loadUrl(urlx);
                     return false;
                 }else{
@@ -63,7 +65,9 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(intent);
                     return true;
                 }
+
             }
+            */
 
             @Override
             public void onReceivedError(WebView view, int errorCode, String description, String failingUrl) {
